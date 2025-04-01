@@ -1,0 +1,19 @@
+[package]
+name = "lx16a-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "Rust library for controlling LX16A servos"
+license = "MIT"
+
+[lib]
+name = "lx16a_rs"
+path = "src/lib.rs"
+
+[[bin]]
+name = "lx16a-rs-demo"
+path = "src/main.rs"
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+tokio-serial = "5.4.5"
