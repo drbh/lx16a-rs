@@ -268,7 +268,7 @@ impl LX16A {
         let checksum = LX16A::checksum(&full_packet);
         full_packet.push(checksum);
 
-        println!("Sending packet: {:?}", full_packet);
+        // println!("Sending packet: {:?}", full_packet);
 
         let mut controller = self.controller.lock().unwrap();
         controller.write_all(&full_packet)?;
@@ -313,7 +313,7 @@ impl LX16A {
         }
 
         LX16A::check_packet(&buffer, self.id)?;
-        println!("Received packet: {:?}", buffer);
+        // println!("Received packet: {:?}", buffer);
 
         // Return only the data portion of the packet (excluding headers, length, ID, and checksum)
         Ok(buffer[5..buffer.len() - 1].to_vec())
